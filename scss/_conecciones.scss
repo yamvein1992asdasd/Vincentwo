@@ -1,0 +1,111 @@
+@mixin fondoDePag{
+    text-align: center;
+    margin: auto;
+    width: 90%;
+}
+@each $k, $v in $fuente{
+    .font-#{$k}{
+        font-size: $v;
+        $fontFamily:'Open Sans', sans-serif;
+    }
+}
+@mixin letraDeParrafos{
+    color: rgb(97, 192, 97);
+	font-size: $fuenteDos;
+    font-family: $fontFamily;
+	padding: .25em 1.5em;
+    }
+
+.cuerpo{
+    background-image: url(../media/sunflowers.png);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    @include fondoDePag;
+    max-width: $tamañomedia;
+
+    & .cuerpoTitulo{
+        @include letraDeParrafos;
+        font-size:  $fuenteDos*2;
+        color: $colorTitulo;
+    }
+    & .cuerpoTotal{
+        min-height: 400px;
+        height: 50vh;
+        position: relative;
+        height: auto;
+        width: 100%;
+        background-image: url(../media/d.png);
+        .cuerpoInter{
+            background-image: url(../media/Lavender.png);
+            background-size: cover;
+          }
+        ul{
+            list-style-type: none;
+            margin: 0%;
+            padding: 0%;
+          }
+        & .cuerpoNav {
+                    .cuerpoLinkInicio{
+                        @include letraDeParrafos;
+                    }
+                    & ul li{
+                        .cuerpoLink{
+                            margin: auto;
+                            color: rgb(69, 158, 9); 
+                            @extend .cuerpoLinkInicio;
+                            @if color == rgb(97, 192, 97){
+                                font-size: $fuenteDos;
+                            }@else{
+                                font-size: ($fuenteDos)- 0.2rem;
+                            }
+                                
+                        }
+                    }
+                }
+            .cuerpoInfo .ariculoUno img{
+                width: 0.150*($tamañomedia);          
+        }
+            .cuerpoInfo .ariculoUno .videoDePortada{
+                width: 0.150*($tamañomedia);
+            }
+        }
+    }
+
+.imagenPsi{
+    width: 0.150*($tamañomedia);
+}
+.piePag{
+    width: 100% ;
+    height: 10%;
+    background-color: burlywood;
+    border-radius: .5em;
+    cursor: pointer;
+    transition: background-color 1s;
+    font-size: 1.2rem;
+    text-align: center;
+    .navbar{
+        .navbar-nav{
+            margin: auto;
+            text-align: center;
+        }
+    }
+  }
+    #footerlink{
+        color: rgb(0, 174, 255);
+}
+    #footerlink{
+        color: darkgreen;
+    }
+  .piePag:hover{
+      background-color: rgb(252, 160, 39);
+
+    }
+
+#import{
+    font-size: 1.2em;
+    color: rgb(211, 33, 33);
+}
+#textot{
+text-align: left;
+}
